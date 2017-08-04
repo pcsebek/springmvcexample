@@ -1,0 +1,52 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!--  Upgraded to 3.0 of the dtd -->
+
+<tiles-definitions>
+
+	<definition name=".view.default" template="/pages/layouts/defaultLayout.jsp">
+	   <put-attribute name="title" value="Default Layout Title" cascade="true" />
+	   <put-attribute name="pageCss" value=""/>
+	   <put-attribute name="header" value="/pages/common/header.jsp" />
+       <put-attribute name="screenName" value="" cascade="true"/>
+       <put-attribute name="menu" value=""/>
+       <put-attribute name="errors" value="/pages/common/error.jsp"/>
+	   <put-attribute name="body-content" value="/pages/common/body-content.jsp"/>
+	   <put-attribute name="footer" value="/pages/common/footer.jsp" />
+	</definition>
+
+    <!-- https://tiles.apache.org/framework/tutorial/advanced/preparer.html -->
+    <!-- controllerUrl no loner part of the DTD so used preparer for this example -->
+    <definition name=".view.menu" template="/pages/common/menu.jsp"
+        preparer="org.sebek.struts1.example.controller.MenuControllerAction">
+        <put-attribute name="menuItems" value=""/>
+    </definition>
+       
+	<definition name=".view.success" extends=".view.default" >
+	   <put-attribute name="title" value="SUCCESS"/>
+	   <put-attribute name="body-content" value="/pages/common/success.jsp"/>
+	</definition>
+
+    <definition name=".view.employee.summary" extends=".view.default">
+       <put-attribute name="title" value="Employee Summary"/>
+       <put-attribute name="menu" value=".view.menu"/>
+       <put-attribute name="body-content" value="/pages/employee/employeeSummary.jsp"/>
+    </definition>
+
+	<definition name=".view.employee" extends=".view.default">
+	   <put-attribute name="title" value="EMPLOYEE FORM"/>
+       <put-attribute name="menu" value=".view.menu"/>
+	   <put-attribute name="body-content" value="/pages/employee/employee.jsp"/>
+	</definition>
+    
+    <definition name=".view.welcome" extends=".view.default">
+		<put-attribute name="title" value="Welcome to Spring MVC Example" cascade="true"/> 
+        <put-attribute name="menu" value=".view.menu"/>
+        <put-attribute name="screenName" value="welcome"/>
+		<put-attribute name="body-content" value="/pages/welcome.jsp"/>
+    </definition>
+   
+    <definition name="view.helloWorld" template="/pages/helloworld/helloWorld.jsp"/> 
+ </tiles-definitions>

@@ -1,0 +1,12 @@
+# excluding folders 
+target/
+work/
+.settings/
+bin/
+
+# exclude files specific to eclipse that are not needed
+.classpath
+.project
+.tomcatplugin
+.#webclasspath
+
