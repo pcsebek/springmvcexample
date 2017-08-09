@@ -14,7 +14,14 @@
     <context:annotation-config/>
     <context:component-scan base-package="org.sebek" />
     
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    
     <!-- <mvc:default-servlet-handler/> -->
     <!-- <mvc:resources mapping="/resources/**" location="/resources/"/> -->
 <!--     

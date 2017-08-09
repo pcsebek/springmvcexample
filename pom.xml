@@ -104,6 +104,27 @@
             <artifactId>tiles-compat</artifactId>
             <version>${apache-tiles.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.ajaxtags</groupId>
+            <artifactId>ajaxtags</artifactId>
+            <version>${ajaxtags.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>${servlet.jsp-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.core.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>springmvcexample</finalName>
@@ -129,5 +150,8 @@
         <commons-lang3.version>3.5</commons-lang3.version>
         <commons-validator.version>1.6</commons-validator.version>
         <jstl.version>1.2</jstl.version>
+        <ajaxtags.version>1.2-beta3</ajaxtags.version>
+        <servlet.jsp-api.version>2.3.2-b02</servlet.jsp-api.version>
+        <jackson.core.version>2.9.0</jackson.core.version>
     </properties>
 </project>

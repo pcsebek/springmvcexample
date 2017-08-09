@@ -33,7 +33,7 @@ public class JobListAjaxAction {
 	
 	private static String OPTION_STRING_FORMAT = "<option value=\"%s\">%s</option>";
 	
-	@RequestMapping("/do//ajax/getJobList")
+	@RequestMapping("/ajax/getJobList")
 	public ModelAndView execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 	

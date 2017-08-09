@@ -41,6 +41,11 @@ public class EmployeeForm{
 	@NotEmpty(message="{label.salary} {errors.required}")
 	String salary;
 	
+	String stateCd;
+	String stateCd2;
+	
+	String stateTypeCd;
+	
 	List<JobDTO> previousJobs = new ArrayList<JobDTO>();	
 	List<JobDTO> jobList = new ArrayList<JobDTO>();
 	
@@ -98,6 +103,30 @@ public class EmployeeForm{
 
 	public void setSalary(String salary) {
 		this.salary = salary;
+	}
+	
+	public String getStateCd() {
+		return stateCd;
+	}
+	
+	public void setStateCd(String stateCd) {
+		this.stateCd = stateCd;
+	}
+	
+	public String getStateCd2() {
+		return stateCd2;
+	}
+	
+	public void setStateCd2(String stateCd) {
+		this.stateCd2 = stateCd;
+	}
+	
+	public String getStateTypeCd() {
+		return stateTypeCd;
+	}
+	
+	public void setStateTypeCd(String stateTypeCd) {
+		this.stateTypeCd = stateTypeCd;
 	}
 	
 	public List<JobDTO> getPreviousJobs() {
