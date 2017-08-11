@@ -28,11 +28,12 @@ public class MenuControllerAction implements ViewPreparer {
 		linkMap = new LinkedHashMap<String,String>();
 		linkMap.put("Welcome", "/do/welcome");
 		linkMap.put("HelloWorld", "/do/helloWorld");
-//		linkMap.put("Employee", "/do/employeeSummary?method=add");
 		linkMap.put("Employee", "/do/employee/summary");
+		linkMap.put("States", "/do/states");
 
 	}
 	
+	@Override
 	public void execute(Request tilesRequest, AttributeContext attributeContext) throws PreparerException {
 
 		List<SimpleMenuItem> links = new ArrayList<SimpleMenuItem>(linkMap.size());

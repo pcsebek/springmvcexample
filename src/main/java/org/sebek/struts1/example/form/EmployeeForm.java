@@ -22,29 +22,31 @@ import org.sebek.struts1.example.validation.constraint.CustomNotBlank;
  */
 public class EmployeeForm{
 
-	String selectedId;
-	String employeeId;
+	private String selectedId;
+	private String employeeId;
 	
 	/* https://raymondhlee.wordpress.com/2014/07/26/including-field-value-in-validation-message-using-spring-validation-framework-for-jsr-303/ */
 	// produces "Last Name lastName is required" note the {0} is replaced by attribute name
 	// ToDo: look at Hibernate Validator to see if a label from properties file can be substituted for the attribute name in error message.
 	@NotBlank
-	String lastName;
+	private String lastName;
 	
 	@CustomNotBlank(arg0="{label.first.name}")
 	@NotBlank
-	String firstName;
+	private String firstName;
 	
-	String currentJobId;
-	String priorJobId;
+	private String currentJobId;
+	private String priorJobId;
+	
 	@NotBlank(message="{errors.required}")
 	@NotEmpty(message="{label.salary} {errors.required}")
-	String salary;
+	private String salary;
 	
-	String stateCd;
-	String stateCd2;
+	private String stateCd;
+	private String stateCd2;
+	private String stateCd3;
 	
-	String stateTypeCd;
+	private String stateTypeCd;
 	
 	List<JobDTO> previousJobs = new ArrayList<JobDTO>();	
 	List<JobDTO> jobList = new ArrayList<JobDTO>();
@@ -119,6 +121,14 @@ public class EmployeeForm{
 	
 	public void setStateCd2(String stateCd) {
 		this.stateCd2 = stateCd;
+	}
+	
+	public String getStateCd3() {
+		return stateCd3;
+	}
+	
+	public void setStateCd3(String stateCd) {
+		this.stateCd3 = stateCd;
 	}
 	
 	public String getStateTypeCd() {

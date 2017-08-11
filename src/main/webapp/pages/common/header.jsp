@@ -10,6 +10,17 @@
     <head>
         <script type="text/javascript" src="/springmvcexample/js/jquery-1.8.3.js"></script>
         
+        <!--  order of scripts important to prevent javascript errors -->
+        <script type="text/javascript" src="/springmvcexample/js/ajaxtags/prototype-1.4.0.js"></script>
+        <script type="text/javascript" src="/springmvcexample/js/ajaxtags/scriptaculous-1.5.3.js"></script>
+        <script type="text/javascript" src="/springmvcexample/js/ajaxtags/overlibmws.js"></script>
+        <script type="text/javascript" src="/springmvcexample/js/ajaxtags/builder-1.5.3.js"></script>
+        <script type="text/javascript" src="/springmvcexample/js/ajaxtags/controls.js"></script>
+        <script type="text/javascript" src="/springmvcexample/js/ajaxtags/ajaxtags-1.2-beta2.js"></script>
+        <script type="text/javascript" src="/springmvcexample/js/ajaxtags/effects.js"></script>
+        
+        <link rel="stylesheet" href="/springmvcexample/stylesheet/stylesheet.css" type="text/css"/>
+
         <script type="text/javascript">
             jQuery.noConflict();
             $j = jQuery;

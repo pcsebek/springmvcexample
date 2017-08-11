@@ -6,6 +6,9 @@
 
 <tiles-definitions>
 
+    <!-- definition name="tile.state.detail.list" template="/pages/state/stateList.jsp" 
+        preparer="org.sebek.struts1.example.controller.StateListController"/ -->
+        
 	<definition name=".view.default" template="/pages/layouts/defaultLayout.jsp">
 	   <put-attribute name="title" value="Default Layout Title" cascade="true" />
 	   <put-attribute name="pageCss" value=""/>
@@ -48,5 +51,12 @@
 		<put-attribute name="body-content" value="/pages/welcome.jsp"/>
     </definition>
    
-    <definition name="view.helloWorld" template="/pages/helloworld/helloWorld.jsp"/> 
+    <definition name="view.helloWorld" template="/pages/helloworld/helloWorld.jsp"/>
+    
+    <definition name="view.state.detail.list" extends=".view.default">
+        <put-attribute name="title" value="State Details" cascade="true"/>
+        <!-- put-attribute name="stateList" type="java.utils.List"/ -->
+        <put-attribute name="menu" value=".view.menu"/>
+        <put-attribute name="body-content" value="/pages/state/stateList.jsp"/>
+    </definition> 
  </tiles-definitions>

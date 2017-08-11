@@ -109,6 +109,13 @@
             <artifactId>ajaxtags</artifactId>
             <version>${ajaxtags.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/net.htmlparser.jericho/jericho-html -->
+        <!-- ajax:displayTag seems not need it and Spring MVC does not include it -->
+        <dependency>
+            <groupId>net.htmlparser</groupId>
+            <artifactId>jericho-html</artifactId>
+            <version>${jericho-html.version}</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
@@ -124,6 +131,37 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>displaytag</groupId>
+            <artifactId>displaytag</artifactId>
+            <version>${displaytag.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>itext</groupId>
+                    <artifactId>itext</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>tomcat</groupId>
+                    <artifactId>jasper-runtime</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>tomcat</groupId>
+                    <artifactId>jasper-compiler</artifactId>
+                </exclusion>
+                <exclusion>
+                   <groupId>tomcat</groupId>
+                   <artifactId>jasper-compiler-jdt</artifactId>
+                </exclusion>
+                <exclusion>
+                   <groupId>org.slf4j</groupId>
+                   <artifactId>jcl104-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                   <groupId>org.slf4j</groupId>
+                   <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>            
         </dependency>
     </dependencies>
     <build>
@@ -150,8 +188,10 @@
         <commons-lang3.version>3.5</commons-lang3.version>
         <commons-validator.version>1.6</commons-validator.version>
         <jstl.version>1.2</jstl.version>
-        <ajaxtags.version>1.2-beta3</ajaxtags.version>
+        <ajaxtags.version>1.2-beta2</ajaxtags.version>
         <servlet.jsp-api.version>2.3.2-b02</servlet.jsp-api.version>
         <jackson.core.version>2.9.0</jackson.core.version>
+        <displaytag.version>1.2</displaytag.version>
+        <jericho-html.version>2.1</jericho-html.version>
     </properties>
 </project>

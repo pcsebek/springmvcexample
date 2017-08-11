@@ -117,6 +117,12 @@
             	   $j("input[name=stateTypeCd][value=" + type + "]").prop("checked",true).change();
             }
             
+            function onStateCodeChangePostFunction2() {
+            	
+            	   $j('#stateCd3Message').fadeIn(1000).delay(1000).fadeOut();
+            }
+
+            
         </script>
         <title><c:out value="${screenName}"/></title>
     </head>
@@ -150,9 +156,22 @@
 		            </td>
 		        </tr>
                 <tr align="left">
+                    <td>State Code (ajax:select): </td>
+                    <td>
+                        <form:select tabindex="5" id="stateCd3" path="stateCd3" disabled="true">
+                            <option/>
+                        </form:select>
+                    </td>
+                    <td>
+                        <div id="stateCd3Message" style="display:none;">
+                        Data successfully retrieved using ajax:select tag
+                        </div>
+                    </td>
+                </tr>
+                <tr align="left">
                     <td>State Code (JSON): </td>
                     <td>
-                        <form:select tabindex="5" id="stateCd" path="stateCd">
+                        <form:select tabindex="6" id="stateCd" path="stateCd">
                             <option/>
                         </form:select>
                     </td>
@@ -160,7 +179,7 @@
                 <tr align="left">
                     <td>State Code (XML): </td>
                     <td>
-                        <form:select tabindex="2" id="stateCd2" path="stateCd2" disabled="true">
+                        <form:select tabindex="7" id="stateCd2" path="stateCd2" disabled="true">
                             <option/>
                         </form:select>
                     </td>
@@ -188,29 +207,29 @@
                 <tr align="left">
                     <td>
                         <% /* <html:submit property="method" styleClass="button" value="save">Save</html:submit> */ %>
-                        <input type="submit" tabindex="5" style="button" name="save" value="Save"/>
+                        <input type="submit" tabindex="50" style="button" name="save" value="Save"/>
                     </td>
                     <td>
                         <% /* <html:submit property="method" styleClass="button" value="saveAndAdd">Save and Add</html:submit> */ %>
-                        <input type="submit" tabindex="6" class="button" name="saveAndAdd" value="Save and Add"/>
+                        <input type="submit" tabindex="51" class="button" name="saveAndAdd" value="Save and Add"/>
                     </td>
                     <td>
                         <% /* <html:submit property="method" styleClass="button" value="delete">Delete</html:submit> */ %>
-                        <input type="submit" tabindex="7" class="button" name="delete" value="Delete"/>
+                        <input type="submit" tabindex="52" class="button" name="delete" value="Delete"/>
                     </td>
 		        </tr>
 		    </table>
 		</form:form>
     </body>
     <% /* 
-        * tag did not work with Spring MVC -- use JQuery.ajax instead 
-    <ajax:select baseUrl="${pageContext.request.contextPath}/do/ajax/tags/getStates"
+        * tag did not work with Spring MVC -- use JQuery.ajax instead */ %>
+    <ajax:select baseUrl="${pageContext.request.contextPath}/do/ajax/ajaxtags/getStates"
                  source="currentJobId"
-                 target="stateCd"
+                 target="stateCd3"
                  parameters="jobId={currentJobId}"
-                 executeOnLoad="true"
-                 defaultOptions="{employeeForm.stateCd}"
-                 postFunction="onStateCodeChangePostFunction"
+                 executeOnLoad="false"
+                 defaultOptions="{employeeForm.stateCd3}"
+                 postFunction="onStateCodeChangePostFunction2"
                  parser="new ResponseXmlParser()"/>
-         */ %>
+         
 </html>

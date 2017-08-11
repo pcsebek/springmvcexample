@@ -13,11 +13,22 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
   
+    <servlet>
+        <servlet-name>stateCodesAjaxTag</servlet-name>
+        <servlet-class>org.sebek.struts1.example.ajax.StateCodesAjaxTag</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
         <url-pattern>/do/*</url-pattern>
     </servlet-mapping>
   
+    <servlet-mapping>
+        <servlet-name>stateCodesAjaxTag</servlet-name>
+        <url-pattern>/do/ajax/ajaxtags/getStates</url-pattern>
+    </servlet-mapping>
+    
+    
     <welcome-file-list>
        <welcome-file></welcome-file>
     </welcome-file-list>

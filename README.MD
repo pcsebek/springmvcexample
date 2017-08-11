@@ -60,6 +60,21 @@ to be written if MessageInterpolation can be understood and modified so that a k
         -- @NotNull(message="{is.required}") or @NotNull(message="{label.last.name} {is.required}")
         and have entries in ValidationMessages.properties for label.last.name and is.required
 
+-- The ajaxtags (org.ajaxtags:ajaxtags:1.2-beta3) has had no activty since February 2008
+    -- New version 1.3-beta-rc7 exists (Feb 2008)
+    -- ajax:select tag does work but not using Spring MVC annotations.  Basically the class that provides data
+    needs to extend an ajaxtags servlet class, an entry is needed in the web.xml to references the servlet class
+    that was written and the path needs to match the ajax:select tag path for the servlet class.  See web.xml,
+    StateCodesAjaxTag.java, employee.jsp (stateCd3) for details.  
+    -- ajax:displayTag
+
+-- The displaytag (displaytag:displaytag:1.2) has had no development activity since December 27, 2008
+    -- display:table works in the basic sense.
+    -- display:column works.
+    -- stateList.jsp, StateController.java, StateDTO.java, and
+       StateDetailService.java are working examples.
+      
+-- Alternative to using displaytag and associated ajaxtags ajax:displayTag is to use the JQuery plugin DataTables and the Buttons extension.  Using this "framework" allows for data tables to be created with data from the Spring Model or via an AJAX call.  The stateList.jsp contains three tables.  Table 1 uses the ajaxtags and displaytag to render data from the Spring Model that was placed there by StateController class.  Table 2 uses JQuery DataTables and also uses Spring Model and the StateController class.  The only difference is that the data used by DataTables needed to undergo JSON conversion using Jackson ObjectWrapper class.  Table 3 uses JQuery DataTables and an AJAX call leveraging an existing method on the StateCodesAjax class with no changes to the Class other than some refactoring of the actual data out of this class and into a Service class so that the data could be used elsewhere.
 
 
 
