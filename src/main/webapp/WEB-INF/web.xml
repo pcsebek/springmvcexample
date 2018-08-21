@@ -7,6 +7,15 @@
     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">  
     
     <display-name>Spring MVC 1 Web Application</display-name>
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/config/spring-beans.xml
+            /WEB-INF/spring-servlet.xml
+        </param-value>
+    </context-param>
+    
     <servlet>
         <servlet-name>spring</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -27,7 +36,10 @@
         <servlet-name>stateCodesAjaxTag</servlet-name>
         <url-pattern>/do/ajax/ajaxtags/getStates</url-pattern>
     </servlet-mapping>
-    
+     
+    <listener>
+        <listener-class>net.sf.navigator.menu.MenuContextListener</listener-class>
+    </listener>
     
     <welcome-file-list>
        <welcome-file></welcome-file>

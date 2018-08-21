@@ -36,6 +36,11 @@
             
             <tr>
                 <td>
+                    <tiles:insertAttribute name="menubar" ignore="false"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <tiles:insertAttribute name="errors"/>
                 </td>
             </tr>

@@ -15,6 +15,7 @@
 	   <put-attribute name="header" value="/pages/common/header.jsp" />
        <put-attribute name="screenName" value="" cascade="true"/>
        <put-attribute name="menu" value=""/>
+       <put-attribute name="menubar" value="/pages/menu/menuBar.jsp"/>
        <put-attribute name="errors" value="/pages/common/error.jsp"/>
 	   <put-attribute name="body-content" value="/pages/common/body-content.jsp"/>
 	   <put-attribute name="footer" value="/pages/common/footer.jsp" />
@@ -59,4 +60,25 @@
         <put-attribute name="menu" value=".view.menu"/>
         <put-attribute name="body-content" value="/pages/state/stateList.jsp"/>
     </definition> 
+    
+    <definition name=".view.menu.item.one" extends=".view.default">
+        <put-attribute name="title" value="Menu Item" cascade="true"/> 
+        <put-attribute name="menu" value=".view.menu"/>
+        <put-attribute name="screenName" value="Menu Item One"/>
+        <put-attribute name="body-content" value="/pages/menu/menuItem.jsp"/>    
+    </definition>
+
+    <definition name=".view.menu.item.two" extends=".view.default">
+        <put-attribute name="title" value="Menu Item" cascade="true"/> 
+        <put-attribute name="menu" value=".view.menu"/>
+        <put-attribute name="screenName" value="Menu Item Two"/>
+        <put-attribute name="body-content" value="/pages/menu/menuItem.jsp"/>    
+    </definition>
+
+    <definition name=".view.menu.item.three" extends=".view.default">
+        <put-attribute name="title" value="Menu Item" cascade="true"/> 
+        <put-attribute name="menu" value=".view.menu"/>
+        <put-attribute name="screenName" value="Menu Item Three"/>
+        <put-attribute name="body-content" value="/pages/menu/menuItem.jsp"/>    
+    </definition>
  </tiles-definitions>

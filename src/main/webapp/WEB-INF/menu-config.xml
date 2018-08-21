@@ -1,0 +1,23 @@
+<MenuConfig>
+    <Displayers>
+        <Displayer name="Dropdown" type="net.sf.navigator.displayer.DropDownMenuDisplayer"/>
+        <Displayer name="Simple" type="net.sf.navigator.displayer.SimpleMenuDisplayer"/>
+        <Displayer name="CoolMenu" type="net.sf.navigator.displayer.CoolMenuDisplayer"/>
+        <Displayer name="CoolMenu4" type="net.sf.navigator.displayer.CoolMenu4Displayer"/>
+        <Displayer name="ListMenu" type="net.sf.navigator.displayer.ListMenuDisplayer"/>
+        <Displayer name="TabbedMenu" type="net.sf.navigator.displayer.TabbedMenuDisplayer"/>
+        <Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+        <Displayer name="XtreeMenu" type="net.sf.navigator.displayer.XtreeMenuDisplayer"/>
+        <Displayer name="CSSListMenu" type="net.sf.navigator.displayer.CSSListMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="web" title="MenuA" onclick="return false;">
+            <Item name="one" title="Menu Item One" page="/do/menupage/one"/>
+            <Item name="two" title="Menu Item Two" page="/do/menupage/two"/>
+        </Menu>
+        <Menu name="stuff" title="MenuB" onclick="return false;">
+            <Item name="nasa" title="Menu Item Three" page="/do/menupage/three"/>
+            <Item name="four" title="Menu Item Four" page="/do/menupage/four"/>
+        </Menu>
+    </Menus>
+</MenuConfig>
